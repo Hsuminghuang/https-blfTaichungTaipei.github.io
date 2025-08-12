@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>邦霖修繕外牆防水查漏-主頁</title>
+<meta name="description" content="專業外牆防水修繕工程、漏水檢測、管線封口等服務，提供多年工程經驗與實績展示。" />
+<style>
+  body {
+    margin: 0; 
+    font-family: 'Microsoft JhengHei', Arial, sans-serif; 
+    background: #f4f6f8; 
+    color: #222;
+  }
+  header {
+    background: #1e3a5f; 
+    color: #fff; 
+    padding: 15px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+  header h1 {
+    margin: 0; 
+    font-size: 20px;
+  }
+  nav a {
+    color: #fff; 
+    text-decoration: none; 
+    margin-left: 15px;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  .hero {
+    background: url('https://picsum.photos/1200/500?random=1') center/cover no-repeat; 
+    padding: 80px 20px; 
+    text-align: center; 
+    color: #fff;
+  }
+  .hero h2 {
+    font-size: 32px; 
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 18px; 
+    margin-bottom: 20px;
+  }
+  .btn {
+    display: inline-block; 
+    background: #ffcc00; 
+    color: #000; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-weight: bold;
+  }
+  .section {
+    padding: 40px 20px; 
+    max-width: 1100px; 
+    margin: auto;
+  }
+  .section h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+    color: #1e3a5f;
+  }
+  #about p {
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #444;
+  }
+  .services, .projects {
+    display: grid; 
+    gap: 20px;
+  }
+  .services {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .service, .project {
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .project img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px 8px 0 0;
+    display: block;
+  }
+  /* 專業證照區塊調整 */
+  #certificates {
+    max-width: 300px;
+    margin: 50px auto 50px auto;
+    text-align: center;
+  }
+  #certificates a {
+    color: #1e3a5f;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+  }
+  #certificates a:hover {
+    text-decoration: underline;
+  }
+  #certificates img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  /* 聯絡我們表單調整回原先大小 */
+  #contact form {
+    display: grid; 
+    gap: 15px; 
+    max-width: 500px; 
+    margin: auto;
+  }
+  #contact input, #contact textarea {
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+  }
+  #contact button {
+    background: #1e3a5f; 
+    color: #fff; 
+    padding: 12px; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  #contact button:hover {
+    background: #264a73; 
+    cursor: pointer;
+  }
+
+  /* 公司位置區塊 */
+  #branches {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    max-width: 1100px;
+    margin: 40px auto;
+    border-radius: 8px;
+  }
+  #branches h2 {
+    text-align: center;
+    color: #1e3a5f;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  #branches .branch-cards {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 40px;
+  }
+  #branches .branch-card {
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    width: 420px; /* 地圖縮圖較大 */
+    padding: 20px; 
+    text-align: center;
+  }
+  #branches .branch-card h3 {
+    color: #1e3a5f; 
+    margin-bottom: 15px;
+    font-size: 18px; /* 字體稍小 */
+    font-weight: 600;
+  }
+  #branches .branch-card img {
+    border-radius: 8px; 
+    max-width: 100%; 
+    height: auto; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #branches .branch-card img:hover {
+    transform: scale(1.05);
+  }
+
+  /* 聯絡人資訊 */
+  #contacts {
+    padding: 50px 20px; 
+    background: #ffffff; 
+    max-width: 1100px; 
+    margin: 40px auto; 
+    border-radius: 8px;
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    color: #333;
+  }
+  #contacts h2 {
+    text-align: center; 
+    color: #1e3a5f; 
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  #contacts p {
+    font-size: 18px; 
+    line-height: 1.8; 
+    max-width: 600px; 
+    margin: 0 auto 25px auto;
+    border-left: 4px solid #1e3a5f;
+    padding-left: 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+  }
+  #contacts strong {
+    color: #1e3a5f;
+    font-weight: 700;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>邦霖修繕-幫您解決居家修繕問題-各式外牆工程施作</h1>
+  <nav>
+    <a href="#services">服務項目</a>
+    <a href="#projects">工程實績</a>
+    <a href="certificates.html">專業證照</a>
+    <a href="#contact">聯絡我們</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>專業外牆防水修繕</h2>
+  <p>多年經驗｜品質保證｜免費估價</p>
+  <a href="#contact" class="btn">聯絡我們</a>
+</section>
+
+<section class="section" id="about">
+  <p>
+    邦霖外牆清洗防水修繕，由一群退伍的特戰部隊職業軍人所組成。我們擅長繩索技能並持有相關證照，如工業繩索、防水技術士、專業磁磚巡檢員等。
+    主要成員在業界經歷了多年磨練，於111年成立了總公司，成員均為7、8年級生，即使身為年輕的做工人，我們也以專業、安全、服務為核心價值，來完成每一個案場。
+    113年我們業務服務範圍拓展到了中部地區，我們服務的範圍已遍佈宜蘭、基隆、台北、桃園、新竹、台中、彰化、南投。
+  </p>
+  <p>
+    我們的口號是「Building Last Forever」，意思是希望透過我們的努力讓您的房子歷久常新、永不褪色。因此，我們一直在不斷地研究、改進和創新，以提升我們的服務品質、技術能力和工作效率。我們力求為每一個案場帶來更優質、更可靠、更安全的施工品質和專業建議，以滿足客戶的需求和期望。
+  </p>
+  <p>
+    此外，我們也十分注重在人才培養和團隊建設上，透過定期的培訓、學習和經驗分享，來提升我們的專業水平和團隊合作精神。我們相信，只有擁有優秀的人才和團隊，才能提供卓越的服務和創造出優秀的工程。
+  </p>
+</section>
+
+<section class="section" id="services">
+  <h2>服務項目</h2>
+  <div class="services">
+    <div class="service"><h3>外牆防水</h3><p>專業塗佈與施工，確保外牆有效防水、防漏。</p></div>
+    <div class="service"><h3>漏水檢測</h3><p>免費場勘，使用專業儀器檢測漏水源頭，快速精準定位。</p></div>
+    <div class="service"><h3>住宅外牆修繕工程</h3><p>外牆管線安裝，雨遮修補/更新/減雨滴噪音草皮安裝。</p></div>
+  </div>
+</section>
+
+<section id="certificates" style="max-width:300px; margin:50px auto; text-align:center;">
+  <a href="certificates.html" title="專業證照展示" style="color:#1e3a5f; font-weight:bold; font-size:20px; text-decoration:none; display:inline-block;">
+    <img src="https://i.postimg.cc/ZYVhNXC9/472595.jpg" alt="專業證照展示" style="width:300px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); margin-bottom:10px;" />
+    <div>專業證照展示</div>
+  </a>
+</section>
+
+<section class="section" id="projects">
+  <h2>工程實績</h2>
+  <div class="projects">
+    <div class="project">
+      <a href="project1.html" style="text-decoration:none; color:inherit;">
+        <img src="https://img.ixintu.com/download/jpg/20200716/afbc719238b3b3d58a4c202ff360c88f_512_512.jpg!ys" alt="外牆防水工程" />
+        <h3>外牆防水工程</h3>
+        <p>從根本上解決漏水問題，針對漏水有效修復並提升房屋耐候性。</p>
+      </a>
+    </div>
+    <div class="project">
+      <a href="project2.html" style="text-decoration:none; color:inherit;">
+        <img src="https://pic.huitu.com/pic/20220331/1873422_20220331131636069080_0.jpg" alt="工程2" />
+        <h3>各式外牆工程</h3>
+        <p>外牆磁磚修補/雨遮安裝/管線配置/燈具安裝 等各式外牆工程。</p>
+      </a>
+    </div>
+    <div class="project">
+      <a href="project3.html" style="text-decoration:none; color:inherit;">
+        <img src="https://img.ixintu.com/download/jpg/20200916/e329549f99c8206c440cec262c374e1d_512_512.jpg!con" alt="社區大樓外牆清洗" />
+        <h3>社區大樓外牆清洗</h3>
+        <p>保持外牆清潔，同時針對外牆實施健康檢查一舉兩得。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 公司位置區塊 -->
+<section id="branches">
+  <h2>公司位置</h2>
+  <div class="branch-cards">
+    <div class="branch-card">
+      <h3>台北總公司</h3>
+      <a href="https://maps.app.goo.gl/vdmmdS9Grtdeoj3N8" target="_blank" rel="noopener noreferrer" title="開啟台北總公司地圖">
+        <img src="https://i.postimg.cc/cvjbVnD9/1233564825.jpg" alt="台北總公司地圖縮圖" />
+      </a>
+    </div>
+    <div class="branch-card">
+      <h3>台中分公司</h3>
+      <a href="https://maps.app.goo.gl/82njNzhzs6EQhYnb6" target="_blank" rel="noopener noreferrer" title="開啟台中分公司地圖">
+        <img src="https://i.postimg.cc/mhNKthDk/749454545.jpg" alt="台中分公司地圖縮圖" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 聯絡人資訊區塊 -->
+<section id="contacts">
+  <h2>聯絡人資訊</h2>
+  <p>
+    <strong>台北總公司</strong><br />
+    地址：新北市中和區景新街467巷35弄19號<br />
+    蔡先生 0980-166-178<br />
+    陳先生 0937-693-915
+  </p>
+  <p>
+    <strong>台中分公司</strong><br />
+    地址：台中市西屯區台灣大道三段389號<br />
+    徐先生 0900-131-292
+  </p>
+</section>
+
+<section class="section" id="contact">
+  <h2>聯絡我們</h2>
+  <p>為了讓您能更快速聯繫我們，請直接加入我們的 Line 官方帳號，與我們即時對話！</p>
+  <p>
+    <a href="https://line.me/R/ti/p/hikitty_" target="_blank" style="display:inline-block; background:#00c300; color:#fff; padding:12px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">
+      加入 Line 好友：邦霖修繕
+    </a>
+  </p>
+</section>
+
+
+
+<footer>
+  © 2021 邦霖修繕-外牆防水查漏 ｜建議使用最新版本瀏覽器
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("感謝您的聯絡，我們將盡快回覆您！");
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
